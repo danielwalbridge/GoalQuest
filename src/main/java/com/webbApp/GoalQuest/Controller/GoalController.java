@@ -2,6 +2,7 @@ package com.webbApp.GoalQuest.Controller;
 
 import com.webbApp.GoalQuest.Model.Goal;
 import com.webbApp.GoalQuest.Repository.GoalRepository;
+import com.webbApp.GoalQuest.Repository.SubGoalRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -23,6 +25,9 @@ public class GoalController {
 
     @Autowired
     private GoalRepository goalRepository;
+
+    @Autowired
+    private SubGoalRepository subGoalRepository;
 
     @RequestMapping("/goals")
     public String gotoGoalsPageAndListAllGoals(ModelMap modelMap) {
@@ -38,7 +43,7 @@ public class GoalController {
     @RequestMapping(value = "/addGoal", method = RequestMethod.GET)
     public String showNewGoalPage(ModelMap modelMap) {
         String userName =  getLoggedInUserName(modelMap);
-        Goal goal = new Goal(0,userName,"Enter Goal title here", LocalDate.now().plusDays(2), false);
+        Goal goal = new Goal(0,userName,"Enter Goal title here", LocalDate.now().plusDays(2), false, new ArrayList<>());
         modelMap.put("goal", goal);
         return "addGoal";
     }
@@ -57,6 +62,7 @@ public class GoalController {
 
     @RequestMapping(value = "/deleteGoal")
     public String deleteGoal(@RequestParam int id) {
+        subGoalRepository.deleteAll();
         goalRepository.deleteById(id);
         return "redirect:/goals";
     }
@@ -79,7 +85,7 @@ public class GoalController {
         goalRepository.save(goal);
         return "redirect:/goals";
     }
-    private String getLoggedInUserName(ModelMap model) {
+    private String getLoggedInUserName(ModelMap modelMap) {
         Authentication authentication =  SecurityContextHolder.getContext().getAuthentication();
         return authentication.getName();
     }

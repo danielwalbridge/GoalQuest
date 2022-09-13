@@ -5,12 +5,15 @@ package com.webbApp.GoalQuest.Security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.ui.ModelMap;
 
 import java.util.function.Function;
 
@@ -52,7 +55,7 @@ public class SpringSecurityConfiguration {
             http.authorizeHttpRequests(
 //                    auth -> auth.anyRequest().authenticated());
                     auth -> auth.antMatchers("/createUser").permitAll()
-                            .antMatchers("/", "/goals", "/updateGoal**").authenticated()
+                            .antMatchers("/", "/goals", "/updateGoal","/addSubGoal").authenticated()
 //                            .anyRequest().authenticated()
                             );
 //              default login page for Spring.

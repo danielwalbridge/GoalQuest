@@ -15,11 +15,11 @@ public class WelcomeController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String gotoWelcomePage(ModelMap model) {
-        model.put("name" ,getLoggedInUserName());
+        model.put("name" ,getLoggedInUserName(model));
         return "welcomePage";
     }
 
-    private String getLoggedInUserName() {
+    private String getLoggedInUserName(ModelMap modelMap) {
       Authentication authentication =  SecurityContextHolder.getContext().getAuthentication();
       return authentication.getName();
     }

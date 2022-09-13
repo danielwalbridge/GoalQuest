@@ -13,6 +13,7 @@
                     <th>Is Done</th>
                     <th>Delete Goal</th>
                     <th>Update Goal</th>
+                    <th>Add Sub Goal</th>
                 </tr>
             </thead>
 
@@ -27,6 +28,9 @@
                         </td>
                         <td>
                             <a href="updateGoal?id= ${goal.id}" class="btn-info"> Update</a>
+                        </td>
+                        <td>
+                            <a href="addSubGoal?id= ${goal.id}" class="btn-info" style="text-decoration-color: blueviolet"> add Sub Goal</a>
                         </td>
                     </tr>
                 </c:forEach>

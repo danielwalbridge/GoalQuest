@@ -9,6 +9,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -31,12 +32,13 @@ public class Goal {
     @OneToMany
     private List<SubGoal> subGoalList;
 
-    public Goal(int id, String userName, String goalTitle, LocalDate targetCompletionDate, boolean done) {
+    public Goal(int id, String userName, String goalTitle, LocalDate targetCompletionDate, boolean done , List<SubGoal> subGoalList) {
         this.id = id;
         this.userName = userName;
         this.goalTitle = goalTitle;
         this.targetCompletionDate = targetCompletionDate;
         this.done = done;
+        this.subGoalList= new ArrayList<>();
     }
     public Goal() {
     }
