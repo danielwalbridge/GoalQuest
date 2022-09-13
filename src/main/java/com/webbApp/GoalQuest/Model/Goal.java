@@ -4,11 +4,12 @@ package com.webbApp.GoalQuest.Model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import java.time.LocalDate;
-
+import java.util.List;
 
 
 @Entity
@@ -26,6 +27,9 @@ public class Goal {
     private LocalDate targetCompletionDate;
 
     private boolean done;
+
+    @OneToMany
+    private List<SubGoal> subGoalList;
 
     public Goal(int id, String userName, String goalTitle, LocalDate targetCompletionDate, boolean done) {
         this.id = id;

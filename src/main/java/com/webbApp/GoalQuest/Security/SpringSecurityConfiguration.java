@@ -52,7 +52,7 @@ public class SpringSecurityConfiguration {
             http.authorizeHttpRequests(
 //                    auth -> auth.anyRequest().authenticated());
                     auth -> auth.antMatchers("/createUser").permitAll()
-                            .antMatchers("/", "/goals").authenticated()
+                            .antMatchers("/", "/goals", "/updateGoal**").authenticated()
 //                            .anyRequest().authenticated()
                             );
 //              default login page for Spring.
@@ -71,19 +71,4 @@ public class SpringSecurityConfiguration {
             http.headers().frameOptions().disable();
             return http.build();
         }
-
-        // The code below is a snippet that may help in the future create a landing page this is outside first
-        // neededing to be autorized before hitting
-    // https://github.com/eazybytes/spring-security/blob/main/section2/springsecsection2latest/src/main/java/com/eazybytes/config/ProjectSecurityConfig.java
-
-//    /**
-//     * Custom configurations as per our requirement
-//     */
-//		http.authorizeHttpRequests( (auth)->auth
-//            .antMatchers("/myAccount","/myBalance","/myLoans","/myCards").authenticated()
-//				.antMatchers("/notices","/contact").permitAll()
-//		).httpBasic(Customizer.withDefaults());
-//		return http.build();
-
-
 }

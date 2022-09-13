@@ -65,7 +65,7 @@ public class GoalController {
     public String gotoUpdateGoalPage(@RequestParam int id, ModelMap modelMap) {
         Goal goal = goalRepository.findById(id).get();
         modelMap.addAttribute("goal", goal);
-        return "addGoal";
+        return "updateGoalPage";
     }
 
     @RequestMapping(value = "/updateGoal", method = RequestMethod.POST)
