@@ -12,16 +12,4 @@ public class LoginController {
     public String goToLoginPage(ModelMap model) {
         return "loginPage";
     }
-
-    @RequestMapping(value = "/createUser", method = RequestMethod.GET)
-    public String goToCreateUser(ModelMap model) {
-        return "createUser";
-    }
-
-    //TODO update background color on all pages.
-//TODO figure out how to create a user and map it to the DATABASE from the create user screen
-    //TODO change over app to grab users from database instead of inmemory
-
-
-
 }

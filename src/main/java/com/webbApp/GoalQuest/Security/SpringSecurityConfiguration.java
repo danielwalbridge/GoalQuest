@@ -29,10 +29,6 @@ public class SpringSecurityConfiguration {
 
             return new InMemoryUserDetailsManager(userDetails1, userDetails2);
         }
-
-
-
-
     private UserDetails createNewUser(String userName, String password) {
         Function<String, String> passwordEncoder
                 = input -> passwordEncoder().encode(input);

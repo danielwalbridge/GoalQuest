@@ -4,7 +4,8 @@
     <div class = "container">
 
         <h1> Your current Goal Quests are </h1>
-        <table class ="table">
+        <table class ="table"
+               bgcolor="#778899">
             <thead>
                 <tr>
                     <th>Goal Name</th>

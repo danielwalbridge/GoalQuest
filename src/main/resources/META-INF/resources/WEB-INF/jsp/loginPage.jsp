@@ -26,8 +26,5 @@
         </p>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
     </form>
-    <div class="container" style="text-align: center" >
-        <a href="/createUser"> Not a member? click here to start your quest</a>
-    </div>
 </div>
 </body><div id="3a8e25a2-58ae-49fa-bb49-06e922de4e04" style="display: block !important; z-index: 2147483647 !important;"></div></html>

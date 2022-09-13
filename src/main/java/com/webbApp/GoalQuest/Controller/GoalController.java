@@ -24,8 +24,6 @@ public class GoalController {
     @Autowired
     private GoalRepository goalRepository;
 
-
-
     @RequestMapping("/goals")
     public String gotoGoalsPageAndListAllGoals(ModelMap modelMap) {
         String userName = getLoggedInUserName(modelMap);
