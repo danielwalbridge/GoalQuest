@@ -73,6 +73,23 @@ public class SubGoalController {
         return "redirect:/goals";
     }
 
+    @RequestMapping(value = "/updateSubGoal", method = RequestMethod.GET)
+    public String gotoUpdateGoalPage(@RequestParam Long id, ModelMap modelMap) {
+        SubGoal subGoal = subGoalRepository.findById(id).get();
+        modelMap.addAttribute("subGoal", subGoal);
+        return "updateSubGoal";
+    }
+
+    @RequestMapping(value = "/updateSubGoal", method = RequestMethod.POST)
+    public String updateGoal(ModelMap modelMap, @Valid SubGoal subgoal, BindingResult result) {
+
+        if (result.hasErrors()) {
+            return "addSubGoal";
+        }
+        subGoalRepository.save(subgoal);
+        return "redirect:/goals";
+    }
+
     private String getLoggedInUserName(ModelMap modelMap) {
         Authentication authentication =  SecurityContextHolder.getContext().getAuthentication();
         return authentication.getName();
