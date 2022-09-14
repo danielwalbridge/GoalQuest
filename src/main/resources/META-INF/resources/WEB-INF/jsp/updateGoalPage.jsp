@@ -3,6 +3,7 @@
 
     <div class="container">
         <h1>Lets update your current goal: ${goal.goalTitle} </h1>
+        <hr>
 
         <form:form method="post" modelAttribute="goal">
 
@@ -20,11 +21,12 @@
 
             <fieldset>
                 <form:label path="done"> Click the box if You've completed the goal!</form:label>
-                <form:checkbox path="done"></form:checkbox>
+                <form:checkbox  cssClass="ui-icon-check btn-lg" path="done"></form:checkbox>
+                <hr>
             </fieldset>
 
             <form:input type="hidden" path="id"/>
-            <input type = "submit" class="btn btn-success"/>
+            <input type = "submit" class="btn btn-success btn-outline-dark"/>
 
         </form:form>
 
