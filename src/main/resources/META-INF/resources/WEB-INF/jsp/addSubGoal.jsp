@@ -16,7 +16,8 @@
 
             <form:input type="hidden" path="id"/>
             <form:input type="hidden" path="goal"/>
-            <input type = "submit" class="btn btn-success"/>
+
+            <input type = "submit" class="btn btn-success btn-primary btn-block btn-outline-dark"/>
 
         </form:form>
 

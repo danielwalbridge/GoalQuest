@@ -31,7 +31,7 @@
                 </c:forEach>
             </tbody>
         </table>
-        <a href="addSubGoal?id= ${goal.id}" class="btn btn-success btn-primary btn-block " > add Sub Goal</a>
+        <a href="addSubGoal?id= ${goal.id}" class="btn btn-success btn-primary btn-block btn-outline-dark"> add Sub Goal</a>
     </div>
 
 <%@include file="common/footer.jspf"%>
