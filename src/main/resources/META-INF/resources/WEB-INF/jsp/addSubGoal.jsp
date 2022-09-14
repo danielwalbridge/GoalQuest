@@ -4,6 +4,7 @@
     <div class="container" >
 
         <h1>Add a sub goal to : ${goal.goalTitle} </h1>
+        <hr>
 
         <form:form method="post" modelAttribute="subGoal" >
 

@@ -4,6 +4,8 @@
     <div class = "container">
 
         <h1> Your current Goal is : ${goal.goalTitle}</h1>
+        <hr>
+        <h3> The target date for this goal is: ${goal.targetCompletionDate}</h3>
         <table class ="table"
                bgcolor="#778899">
             <thead>
