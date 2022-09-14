@@ -11,6 +11,8 @@
             <thead>
                 <tr>
                     <th>Sub-Goals</th>
+                    <th>Delete Sub-Goal</th>
+                    <th>Update Sub-goal</th>
                 </tr>
             </thead>
 
@@ -18,16 +20,15 @@
                 <c:forEach items="${subGoals}" var="subGoal">
                     <tr>
                         <td>${subGoal.description}</td>
-                    </tr>
 
-<%--                            <a href="deleteGoal?id=${goal.id}" class="btn-warning">Delete</a>--%>
-<%--                        </td>--%>
-<%--                        <td>--%>
-<%--                            <a href="updateGoal?id= ${goal.id}" class="btn-info"> Update</a>--%>
-<%--                        </td>--%>
-<%--                        <td>--%
-<%--                        </td>--%>
-<%--                    </tr>--%>
+                <td>
+                    <a href="deleteSubGoal?id=${subGoal.id}" class="btn btn-sm btn-danger btn-block btn-outline-dark ">Delete</a>
+                </td>
+                <td>
+                    <a href="updateSubGoal?id= ${subGoal.id}" class="btn btn-sm btn-warning btn-block btn-outline-dark "> Update</a>
+                </td>
+                <td>
+                    </tr>
                 </c:forEach>
             </tbody>
         </table>

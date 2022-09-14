@@ -60,12 +60,16 @@ public class GoalController {
         return "redirect:/goals";
     }
 
+    //todo fix date picker
+
     @RequestMapping(value = "/deleteGoal")
     public String deleteGoal(@RequestParam int id) {
         subGoalRepository.deleteAll();
         goalRepository.deleteById(id);
         return "redirect:/goals";
     }
+    //todo: update delete goal to not drop the whole subgoal repo
+    // should instead only delete goals where forign key is = goal key
 
     @RequestMapping(value = "/updateGoal", method = RequestMethod.GET)
     public String gotoUpdateGoalPage(@RequestParam int id, ModelMap modelMap) {

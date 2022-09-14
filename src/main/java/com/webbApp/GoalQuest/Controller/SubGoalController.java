@@ -67,6 +67,12 @@ public class SubGoalController {
         return "subGoalsPage";
     }
 
+    @RequestMapping(value = "/deleteSubGoal")
+    public String deleteGoal(@RequestParam Long id) {
+        subGoalRepository.deleteById(id);
+        return "redirect:/goals";
+    }
+
     private String getLoggedInUserName(ModelMap modelMap) {
         Authentication authentication =  SecurityContextHolder.getContext().getAuthentication();
         return authentication.getName();
