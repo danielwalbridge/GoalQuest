@@ -26,23 +26,23 @@
                         <td>${goal.targetCompletionDate}</td>
                         <td>${goal.done}</td>
                         <td>
-                            <a href="deleteGoal?id=${goal.id}" class="btn-warning">Delete</a>
+                            <a href="deleteGoal?id=${goal.id}" class="btn btn-sm btn-danger btn-block btn-outline-dark ">Delete</a>
                         </td>
                         <td>
-                            <a href="updateGoal?id= ${goal.id}" class="btn-info"> Update</a>
+                            <a href="updateGoal?id= ${goal.id}" class="btn btn-sm btn-warning btn-block btn-outline-dark "> Update</a>
                         </td>
                         <td>
-                            <a href="addSubGoal?id= ${goal.id}" class="btn-info" style="text-decoration-color: blueviolet"> add Sub Goal</a>
+                            <a href="addSubGoal?id= ${goal.id}" class="btn btn-sm btn-block btn-info btn-outline-dark" > add Sub Goal</a>
                         </td>
 
                         <td>
-                            <a href="viewSubGoals?id= ${goal.id}" class="btn-info" style="text-decoration-color: blueviolet"> view Sub Goal</a>
+                            <a href="viewSubGoals?id= ${goal.id}" class="btn btn-sm btn-block btn-info btn-outline-dark" > view Sub Goal</a>
                         </td>
                     </tr>
                 </c:forEach>
             </tbody>
         </table>
-        <a href="addGoal" class="btn btn-success">add goal</a>
+        <a href="addGoal" class="btn btn-success btn-outline-dark">add goal</a>
     </div>
 
 <%@include file="common/footer.jspf"%>
