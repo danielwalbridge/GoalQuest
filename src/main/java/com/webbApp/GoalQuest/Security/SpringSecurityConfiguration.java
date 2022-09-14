@@ -53,11 +53,11 @@ public class SpringSecurityConfiguration {
         @Bean
     public SecurityFilterChain filterChain( HttpSecurity http) throws Exception {
             http.authorizeHttpRequests(
-//                    auth -> auth.anyRequest().authenticated());
-                    auth -> auth.antMatchers("/createUser").permitAll()
-                            .antMatchers("/", "/goals", "/updateGoal","/addSubGoal").authenticated()
-//                            .anyRequest().authenticated()
-                            );
+                    auth -> auth.anyRequest().authenticated());
+//                    auth -> auth.antMatchers("/createUser").permitAll()
+//                            .antMatchers("/", "/goals", "/updateGoal","/addSubGoal"
+//                            ).authenticated()
+//                            );
 //              default login page for Spring.
 //            http.formLogin(withDefaults());
 
