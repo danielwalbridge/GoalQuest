@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Controller
 @SessionAttributes("name")
@@ -47,9 +50,28 @@ public class SubGoalController {
         return "redirect:/goals";
     }
 
+    @RequestMapping(value = "/viewSubGoals", method = RequestMethod.GET)
+    public String showSubGoalsPage(@RequestParam(required = false) Integer id, ModelMap modelMap) {
+        Goal goal = goalRepository.findById(id).get();
+        List<SubGoal> subGoalArrayList = subGoalRepository.findAll();
+        List<SubGoal> goalToSubGoal = new ArrayList<>();
+
+        for (SubGoal subGoal:subGoalArrayList) {
+            if (subGoal.getGoal().getId()== id) {
+                goalToSubGoal.add(subGoal);
+            }
+        }
+        modelMap.addAttribute("subGoals", goalToSubGoal);
+        modelMap.addAttribute("goal", goal);
+        return "subGoalsPage";
+    }
+
     private String getLoggedInUserName(ModelMap modelMap) {
         Authentication authentication =  SecurityContextHolder.getContext().getAuthentication();
         return authentication.getName();
     }
+
+    //todo build up sublist controller and methods
+    // update delete method to handle subgoals
 
 }
