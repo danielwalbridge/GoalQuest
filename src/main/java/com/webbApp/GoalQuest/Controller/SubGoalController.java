@@ -35,6 +35,7 @@ public class SubGoalController {
         Goal goal = goalRepository.findById(id).get();
         SubGoal subGoal = new SubGoal(0L, goal,"");
         modelMap.addAttribute("subGoal", subGoal);
+        modelMap.addAttribute("goal", goal);
         return "addSubGoal";
     }
 
@@ -43,7 +44,7 @@ public class SubGoalController {
                                 ModelMap modelMap, @Valid SubGoal subGoal, BindingResult result) {
 
         if (result.hasErrors()) {
-            return "redirect:/addSubGoal";
+            return "redirect:/goals";
         }
         subGoal.setDescription(description);
         subGoalRepository.save(subGoal);

@@ -23,14 +23,13 @@
 <%--                        <td>--%>
 <%--                            <a href="updateGoal?id= ${goal.id}" class="btn-info"> Update</a>--%>
 <%--                        </td>--%>
-<%--                        <td>--%>
-<%--                            <a href="addSubGoal?id= ${goal.id}" class="btn-info" style="text-decoration-color: blueviolet"> add Sub Goal</a>--%>
+<%--                        <td>--%
 <%--                        </td>--%>
 <%--                    </tr>--%>
                 </c:forEach>
             </tbody>
         </table>
-<%--        <a href="addGoal" class="btn btn-success">add goal</a>--%>
+        <a href="addSubGoal?id= ${goal.id}" class="btn btn-success btn-primary btn-block " > add Sub Goal</a>
     </div>
 
 <%@include file="common/footer.jspf"%>

@@ -32,7 +32,7 @@ public class Goal {
     @OneToMany
     private List<SubGoal> subGoalList;
 
-    public Goal(int id, String userName, String goalTitle, LocalDate targetCompletionDate, boolean done , List<SubGoal> subGoalList) {
+    public Goal(int id, String userName, String goalTitle, LocalDate targetCompletionDate, boolean done) {
         this.id = id;
         this.userName = userName;
         this.goalTitle = goalTitle;
@@ -41,6 +41,9 @@ public class Goal {
         this.subGoalList= new ArrayList<>();
     }
     public Goal() {
+    }
+    public void addSubGoal(SubGoal subGoal) {
+        subGoalList.add(subGoal);
     }
 
 }

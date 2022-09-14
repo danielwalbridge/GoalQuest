@@ -22,9 +22,4 @@
     </div>
 <%@include file="common/footer.jspf"%>
 
-<%--<script type="text/javascript">--%>
-<%--    $('#targetCompletionDate').datepicker({--%>
-<%--        format: 'yyyy-mm-dd',--%>
 
-<%--    });--%>
-<%--</script>--%>

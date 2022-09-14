@@ -43,7 +43,7 @@ public class GoalController {
     @RequestMapping(value = "/addGoal", method = RequestMethod.GET)
     public String showNewGoalPage(ModelMap modelMap) {
         String userName =  getLoggedInUserName(modelMap);
-        Goal goal = new Goal(0,userName,"Enter Goal title here", LocalDate.now().plusDays(2), false, new ArrayList<>());
+        Goal goal = new Goal(0,userName,"Enter Goal title here", LocalDate.now().plusDays(2), false);
         modelMap.put("goal", goal);
         return "addGoal";
     }
